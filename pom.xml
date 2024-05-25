@@ -86,6 +86,12 @@
 			<artifactId>twitter4j-core</artifactId>
 			<version>4.1.2</version>
 		</dependency>
+<!--		Use cloudinary for store image data-->
+		<dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-http44</artifactId>
+			<version>1.38.0</version>
+		</dependency>
 
 
 	</dependencies>
