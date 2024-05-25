@@ -21,10 +21,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-logging</artifactId>-->
-<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,12 +44,6 @@
 <!--			<artifactId>spring-social-twitter</artifactId>-->
 <!--			<version>1.1.2.RELEASE</version>-->
 <!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.social</groupId>-->
-<!--			<artifactId>spring-social-config</artifactId>-->
-<!--			<version>1.1.6.RELEASE</version>-->
-<!--		</dependency>-->
-
 
 		<!-- Spring Data JPA -->
 		<dependency>
@@ -90,13 +80,12 @@
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
-
-		<!--		<dependency>-->
-<!--			<groupId>org.twitter4j</groupId>-->
-<!--			<artifactId>twitter4j-core</artifactId>-->
-<!--			<version>4.1.2</version>-->
-<!--		</dependency>-->
-
+<!--		twitter api -->
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>4.1.2</version>
+		</dependency>
 
 	</dependencies>
 
