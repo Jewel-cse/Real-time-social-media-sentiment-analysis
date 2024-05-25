@@ -18,7 +18,7 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
-    //upload an image into the file -> then save the file path into database
+
     @PostMapping
     public ResponseEntity<?> uploadImage(@RequestParam("image")MultipartFile file) throws IOException {
         String uploadImg = imageService.uploadImage(file);
@@ -27,11 +27,27 @@ public class ImageController {
                 .body(uploadImg);
     }
 
-
-    //get the image : from db we get file path-> and then file we show the image
     @GetMapping("/{fileName}")
     public ResponseEntity<?> download(@PathVariable String fileName) throws IOException {
         byte[]imageDate = imageService.downloadImage(fileName);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.valueOf("image/png"))
+                .body(imageDate);
+    }
+
+    //upload an image into the file -> then save the file path into database
+    @PostMapping("/fileSystem")
+    public ResponseEntity<?> uploadImageFilesystem(@RequestParam("image")MultipartFile file) throws IOException {
+        String uploadImg = imageService.uploadImageFileSystem(file);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(uploadImg);
+    }
+    //get the image : from db we get file path-> and then file we show the image
+    @GetMapping("/fileSystem/{fileName}")
+    public ResponseEntity<?> downloadFileSystem(@PathVariable String fileName) throws IOException {
+        byte[]imageDate = imageService.downloadImageFileSystem(fileName);
 
         return ResponseEntity.status(HttpStatus.OK)
                 .contentType(MediaType.valueOf("image/png"))
